@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Traffic Control Room</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .alert {
+            font-size: 20px;
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>🚦 Traffic Control Room</h2>
+    <div id="alert">Checking alerts...</div>
+
+    <script>
+        fetch("/status")
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById("alert").innerText =
+                    data.traffic_alert
+                        ? "🚑 Ambulance Incoming! Clear Route Immediately"
+                        : "✅ No Active Emergency Alerts";
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Emergency Response</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<h1 class="title">🚨 Smart Emergency Response</h1>
+
+<!-- STATUS CARD -->
+<div class="card">
+    <h2>Emergency Status</h2>
+
+    <div class="status-grid">
+        <div><b>Case ID</b><span id="caseId">-</span></div>
+        <div><b>Urgency</b><span id="urgency">-</span></div>
+        <div><b>Location Source</b><span id="locationSource">-</span></div>
+        <div><b>Ambulance</b><span id="ambulance">-</span></div>
+        <div><b>Route</b><span id="route">-</span></div>
+        <div><b>ETA</b><span id="eta">-</span></div>
+    </div>
+</div>
+
+<!-- TRAFFIC ALERT BAR -->
+<div id="trafficBar" class="traffic-bar hidden">
+    🚦 Traffic Alert: <span id="traffic">Alert Sent</span>
+</div>
+
+<!-- ACTION BUTTONS -->
+<div class="button-panel">
+    <button onclick="triggerSOS()" class="danger">Trigger SOS</button>
+    <button onclick="sendGPS()">Send GPS</button>
+    <button onclick="sendSMS()">Send SMS</button>
+    <button onclick="assignAmbulance()">Assign Ambulance</button>
+    <button onclick="getRoute()">Navigate to Patient</button>
+    <button onclick="startNavigation()">Start Navigation (Google Maps)</button>
+    <button onclick="navigateToHospital()">Navigate to Hospital</button>
+    <button onclick="replan()">Simulate Traffic Jam</button>
+    <button onclick="trafficAlert()">Send Traffic Alert</button>
+</div>
+
+<!-- MAP CARD -->
+<div class="card">
+    <h2>Live Map View</h2>
+    <div id="map"></div>
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

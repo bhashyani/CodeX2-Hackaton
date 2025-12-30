@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ambulance Driver Navigation</title>
+
+    <!-- Mobile-friendly -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Leaflet CSS -->
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+
+    <!-- Driver Styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='driver.css') }}">
+</head>
+
+<body>
+
+<h1>🚑 Ambulance Driver Panel</h1>
+
+<div class="info-bar">
+    <div><b>Case ID:</b> <span id="caseId">-</span></div>
+    <div><b>Status:</b> <span id="status">Waiting</span></div>
+    <div><b>ETA:</b> <span id="eta">-</span></div>
+</div>
+
+<div class="buttons">
+    <button onclick="navigateToPatient()">Navigate to Patient</button>
+    <button onclick="pickupPatient()">Patient Picked Up</button>
+    <button onclick="navigateToHospital()">Navigate to Hospital</button>
+</div>
+
+<!-- MAP -->
+<div id="map"></div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<!-- Driver Logic -->
+<script src="{{ url_for('static', filename='driver.js') }}"></script>
+
+</body>
+</html>

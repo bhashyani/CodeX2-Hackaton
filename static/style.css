@@ -1,0 +1,87 @@
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f4f6f9;
+    margin: 0;
+    padding: 20px;
+}
+
+/* HEADER */
+.title {
+    text-align: center;
+    color: #b71c1c;
+    margin-bottom: 20px;
+}
+
+/* CARD STYLE */
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* STATUS GRID */
+.status-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.status-grid div {
+    background: #f9fafb;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.status-grid span {
+    display: block;
+    margin-top: 4px;
+    font-weight: bold;
+}
+
+/* TRAFFIC ALERT BAR */
+.traffic-bar {
+    background: #e3f2fd;
+    color: #0d47a1;
+    padding: 12px;
+    border-left: 5px solid #1976d2;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
+/* BUTTON PANEL */
+.button-panel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background: #1976d2;
+    color: white;
+    font-size: 14px;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+button.danger {
+    background: #d32f2f;
+}
+
+/* MAP */
+#map {
+    height: 420px;
+    border-radius: 6px;
+}
